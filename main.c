@@ -3,8 +3,14 @@
 #include "linkedlist.h"
 
 int main() {
+
+	struct node * myNumbers;
+	printf("Printing empty linked list:\n");
+	print_list (myNumbers);
+
+	printf("-------------------------------\n");
 	printf("Inserting 1 to front: \n");
-	struct node * myNumbers = insert_front(myNumbers, 1);
+	myNumbers = insert_front(0, 1);
 	print_list (myNumbers);
 	
 	printf("-------------------------------\n");
@@ -19,8 +25,8 @@ int main() {
 
 	printf("-------------------------------\n");
 	printf("Freeing list:\n");
-	myNumbers2 = free_list(myNumbers2);
-	printf("EXPECTING NO VALUE: \n");
-	printf("%p\n", myNumbers2);
+	struct node * myNumbers3 = free_list(myNumbers2);
+	print_list(myNumbers3);
+
 	return 0;
 }
